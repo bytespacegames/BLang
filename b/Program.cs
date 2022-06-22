@@ -102,6 +102,7 @@ namespace b
                 } else { ignores -= 1; }
                 line += 1;
             }
+            Console.ReadLine();
         }
         static bool allCharactersSame(string s)
         {
