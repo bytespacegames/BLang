@@ -45,9 +45,9 @@ namespace b
                                 }
                                 break;
                             case 3:
-                                if (highlightedStack > 0 && stacks.Count >= 2)
+                                if (highlightedStack > 0)
                                 {
-                                    highlightedStack += 1;
+                                    highlightedStack -= 1;
                                     stacks[highlightedStack] += dueToss;
                                     dueToss = 0;
                                 }
@@ -55,7 +55,7 @@ namespace b
                             case 4:
                                 if (highlightedStack - 1 < stacks.Count)
                                 {
-                                    highlightedStack -= 1;
+                                    highlightedStack += 1;
                                     stacks[highlightedStack] += dueToss;
                                     dueToss = 0;
                                 }
@@ -64,7 +64,7 @@ namespace b
                                 stacks.Add(0);
                                 break;
                             case 6:
-                                if (stacks[highlightedStack] == 0)
+                                if (stacks[highlightedStack] != 0)
                                 {
                                     ignores += 2;
                                 }
@@ -88,7 +88,7 @@ namespace b
                                     case 3:
                                         if (stacks[highlightedStack] != 0)
                                         {
-                                            line -= 2;
+                                            line -= 3;
                                         }
                                         break;
                                     default:
